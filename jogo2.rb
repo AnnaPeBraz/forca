@@ -5,3 +5,4 @@ File.open('palavras.txt', 'r') do |arq|
   end
   puts vetor
 end
+
