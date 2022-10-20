@@ -18,22 +18,51 @@ end
 
 
 obj = Palavra.new
-secreto = obj.sortear_palavra
+secreto = obj.sortear_palavra.chomp #cooquei o chomp aqui pq tava contando com a porcaria do enter nessa joça
 tam = secreto.size
 # vetor = secreto.split('')
 vetor =[]
 
 chances = 6
-acerto = false
-
+acerto = tam
+puts secreto
+puts tam
 
 tam.times do
   vetor << "_ "
 end
 
-print "A pakavra secreta é: #{vetor.join} \n"
+print "A palavra secreta é: #{vetor.join} \n"
 
 
+while (chances > 0) && (acerto <= tam) do
+
+  puts "Escolha uma letra: "
+  tentativa = gets.chomp
+
+  i = 0
+
+  secreto.each_char do |letra|
+    if vetor[i] == "_ "
+      if letra == tentativa
+        vetor[i] = tentativa
+        acerto -= 1
+        puts vetor.join
+      else
+        chances += 1
+      end
+    end
+
+    i+=1
+  end
+
+end
+
+if chances == 0 
+  puts "perdeu otario"
+else
+  puts "ae cuzao, certo mizeravi"
+end
 
 
 
