@@ -27,6 +27,7 @@ chances = 6
 acerto = tam
 puts secreto
 puts tam
+fim = false
 
 tam.times do
   vetor << "_ "
@@ -35,34 +36,38 @@ end
 print "A palavra secreta é: #{vetor.join} \n"
 
 
-while (chances > 0) && (acerto <= tam) do
-
+while ((chances > 0)) do
+  puts "Chances restantes: #{chances}"
   puts "Escolha uma letra: "
   tentativa = gets.chomp
 
   i = 0
 
   secreto.each_char do |letra|
-    if vetor[i] == "_ "
+    # if vetor[i] == "_ "
       if letra == tentativa
         vetor[i] = tentativa
-        acerto -= 1
+        # acerto += 1
         puts vetor.join
-      else
-        chances += 1
+        # puts acerto
+      # else
+      #   chances -= 1
+      #   puts chances
       end
-    end
-
+    # end
     i+=1
   end
 
-end
+  # if chances == 0 
+  #   puts "perdeu otario"
+  #   fim = true
+  # else
+  #   puts "ae cuzao, certo mizeravi"
+  #   fim = true
+  # end
 
-if chances == 0 
-  puts "perdeu otario"
-else
-  puts "ae cuzao, certo mizeravi"
-end
+  end
+
 
 
 
