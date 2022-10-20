@@ -24,9 +24,8 @@ tam = secreto.size
 vetor =[]
 
 chances = 6
-acerto = tam
+acerto = 0
 puts secreto
-puts tam
 fim = false
 
 tam.times do
@@ -44,20 +43,29 @@ while ((chances > 0)) do
   i = 0
 
   secreto.each_char do |letra|
-    # if vetor[i] == "_ "
+    if vetor[i] == "_ "
       if letra == tentativa
         vetor[i] = tentativa
-        # acerto += 1
+        fim = true
+        acerto += 1
         puts vetor.join
         # puts acerto
       # else
       #   chances -= 1
       #   puts chances
       end
-    # end
+    end
     i+=1
   end
 
+  if fim == false
+    chances -=1
+  end
+
+  puts "acerto #{acerto}"
+  fim = false
+
+  
   # if chances == 0 
   #   puts "perdeu otario"
   #   fim = true
@@ -66,7 +74,7 @@ while ((chances > 0)) do
   #   fim = true
   # end
 
-  end
+end
 
 
 
