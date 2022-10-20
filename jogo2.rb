@@ -16,26 +16,46 @@ class Palavra
 
 end
 
-# puts "digite uma letra: "
-
-# obj = gets.chomp
-
-# if obj != letras[0]
-#   puts "Errou"
-# else
-#   puts "opa"
-# end
 
 obj = Palavra.new
+secreto = obj.sortear_palavra
+tam = secreto.size
+# vetor = secreto.split('')
+vetor =[]
 
-vetor = obj.sortear_palavra.split('')
+chances = 6
+acerto = false
 
-puts vetor
 
-vetor.each do |letras|
-  if letras != "a"
-    puts "Errou"
-  else
-    puts "opa"
-  end
+tam.times do
+  vetor << "_ "
 end
+
+print "A pakavra secreta é: #{vetor.join} \n"
+
+
+
+
+
+
+
+
+
+
+
+# while errou < 6 do
+#   puts "Digite uma letra: "
+#   tentativa = gets.chomp
+
+#   vetor.each do |letras|
+#     if letras != tentativa
+#       acertou +=1
+#     else
+#       errou +=1
+#     end
+#   end
+# end
+
+# puts "acertou #{acertou} vezes"
+
+# puts "errou #{errou} vezes"
