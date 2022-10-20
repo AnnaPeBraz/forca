@@ -33,9 +33,10 @@ tam.times do
 end
 
 print "A palavra secreta é: #{vetor.join} \n"
+puts " - " *10
 
 
-while ((chances > 0)) do
+while ((chances > 0) && (acerto < tam)) do
   puts "Chances restantes: #{chances}"
   puts "Escolha uma letra: "
   tentativa = gets.chomp
@@ -62,17 +63,16 @@ while ((chances > 0)) do
     chances -=1
   end
 
-  puts "acerto #{acerto}"
+  # puts "acerto #{acerto}"
   fim = false
 
-  
-  # if chances == 0 
-  #   puts "perdeu otario"
-  #   fim = true
-  # else
-  #   puts "ae cuzao, certo mizeravi"
-  #   fim = true
-  # end
+
+  if chances == 0 
+    puts "perdeu otario"
+  end
+  if acerto == tam
+    puts "ae cuzao, certo mizeravi"
+  end
 
 end
 
